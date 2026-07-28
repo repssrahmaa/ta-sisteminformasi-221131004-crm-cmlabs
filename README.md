@@ -1,4 +1,4 @@
-# Sistem CRM CMLABS — Monitoring Leads & Sales
+# Sistem CRM CMLABS
 
 Sistem Customer Relationship Management (CRM) berbasis web untuk membantu proses monitoring leads dan sales pada PT CMLABS Indonesia Digital, dikembangkan menggunakan metode Scrum sebagai bagian dari Tugas Akhir.
 
@@ -26,7 +26,7 @@ Sistem Customer Relationship Management (CRM) berbasis web untuk membantu proses
 
 | Keterangan | Informasi |
 |------------|-----------|
-| **Dosen Pembimbing** | Koko Wahyu Prasetyo |
+| **Dosen Pembimbing** | Koko Wahyu Prasetyo S.Kom., M.T.I |
 
 ---
 
@@ -232,7 +232,7 @@ http://localhost:3000
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Admin** | `ADMIN@cmlabs.co` | `Demo123!` |
+| **Admin** | `admin@cmlabs.co` | `Demo123!` |
 | **Executive** | `executive@cmlabs.co` | `Demo123!` |
 | **Sales Manager** | `sales_mgr@cmlabs.co` | `Demo123!` |
 | **Account Executive** | `ae@cmlabs.co` | `Demo123!` |
@@ -327,6 +327,13 @@ npx prisma db seed
 https://github.com/repssrahmaa/ta-sisteminformasi-221131004-crm-cmlabs
 ```
 
+---
+
+## Akses Demo Website
+
+```text
+https://cmlabs-crm.vercel.app/
+```
 ---
 
 ## Lisensi
