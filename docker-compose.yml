@@ -18,6 +18,20 @@ services:
       timeout: 5s
       retries: 5
 
+  # ── Prisma Migration & Seed ─────────────────────────────
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: cmlabs_migrate
+    environment:
+      DATABASE_URL: postgresql://postgres:password123@postgres:5432/cmlabs_crm
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: sh -c "npx prisma migrate deploy && npx prisma db seed"
+
   # ── Next.js App ─────────────────────────────────────────
   app:
     build:
@@ -35,6 +49,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
 
 volumes:
   postgres_data:
