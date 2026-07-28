@@ -2,159 +2,333 @@
 
 Sistem Customer Relationship Management (CRM) berbasis web untuk membantu proses monitoring leads dan sales pada PT CMLABS Indonesia Digital, dikembangkan menggunakan metode Scrum sebagai bagian dari Tugas Akhir.
 
+---
+
 ## 1. Judul Tugas Akhir
 
 **Pengembangan Sistem Customer Relationship Management (CRM) Berbasis Web untuk Monitoring Leads dan Sales pada CMLABS Menggunakan Metode Scrum**
 
+---
+
 ## 2. Identitas Mahasiswa
 
-| | |
-|---|---|
-| Nama | Reva Rahma Nadira |
-| NIM | 221131004 |
-| Program Studi | Sistem Informasi (S1) |
-| Fakultas | Sains dan Teknologi |
-| Universitas | Universitas Bhinneka Nusantara (UBHINUS) |
+| Keterangan | Informasi |
+|------------|-----------|
+| **Nama** | Reva Rahma Nadira |
+| **NIM** | 221131004 |
+| **Program Studi** | Sistem Informasi (S1) |
+| **Fakultas** | Sains dan Teknologi |
+| **Universitas** | Universitas Bhinneka Nusantara (UBHINUS) |
+
+---
 
 ## 3. Dosen Pembimbing
 
-| | |
-|---|---|
-| Dosen Pembimbing | Koko Wahyu Prasetyo |
+| Keterangan | Informasi |
+|------------|-----------|
+| **Dosen Pembimbing** | Koko Wahyu Prasetyo |
+
+---
 
 ## 4. Deskripsi Singkat Sistem
 
-CMLABS adalah perusahaan digital marketing (SEO, content marketing, dan produk digital lain) yang sebelumnya mengelola leads dan sales secara manual melalui spreadsheet serta komunikasi yang tersebar di berbagai media (email, WhatsApp, Google Chat). Sistem ini dikembangkan menggunakan metode Scrum dalam delapan sprint selama 88 hari kerja untuk mengintegrasikan seluruh proses tersebut ke dalam satu platform, mencakup delapan modul utama:
+CMLABS merupakan perusahaan digital marketing yang sebelumnya mengelola data leads dan sales secara manual menggunakan spreadsheet serta berbagai media komunikasi terpisah, seperti Email, WhatsApp, dan Google Chat. Kondisi tersebut menyebabkan duplikasi data, kesulitan monitoring pipeline, serta keterlambatan penyusunan laporan.
 
-1. **Authentication & Role-Based Access Control (RBAC)** — login dan pembatasan hak akses untuk 4 role: Admin, Executive, Sales Manager, Account Executive
-2. **Leads Management** — Kanban Board dengan 6 tahapan pipeline (Approach, Cold Lead, Deck Request, Meeting, Deal, Recycle), mendukung drag-and-drop
-3. **Analytics Dashboard** — ringkasan KPI dan visualisasi performa penjualan
-4. **Team Management** — pengelolaan data anggota Tim Sales
-5. **Profile Management** — pengelolaan profil akun secara mandiri
-6. **Lead Activity Timeline** — pencatatan riwayat aktivitas per leads (Catatan, Pengiriman Email, Agenda Telepon, Agenda Meeting, Tugas)
-7. **Sales Forecasting Dashboard** — proyeksi pendapatan berbasis weighted probability per tahapan pipeline
-8. **Document Management** — pembuatan dokumen bisnis (Invoice, SPK, MoU) dalam format `.docx`, digenerate on-demand
+Sebagai solusi, dikembangkan sistem **Customer Relationship Management (CRM)** berbasis web menggunakan metode **Scrum** yang dilaksanakan dalam **8 Sprint (88 hari kerja)**. Sistem mengintegrasikan seluruh proses monitoring leads dan sales ke dalam satu platform yang terdiri atas delapan modul utama berikut.
 
-Sistem telah diuji melalui Black Box Testing (bersama Product Owner, seluruh skenario Valid) dan User Acceptance Testing melibatkan 10 responden dari empat role pengguna di CMLABS.
+1. **Authentication & Role-Based Access Control (RBAC)**  
+   Login dan pengelolaan hak akses berdasarkan empat role pengguna:
+   - Admin
+   - Executive
+   - Sales Manager
+   - Account Executive
+
+2. **Leads Management**  
+   Kanban Board dengan enam tahapan pipeline:
+   - Approach
+   - Cold Lead
+   - Deck Request
+   - Meeting
+   - Deal
+   - Recycle
+
+   Mendukung fitur **drag-and-drop** untuk memindahkan leads antar tahap.
+
+3. **Analytics Dashboard**  
+   Menampilkan KPI dan visualisasi performa penjualan secara real-time.
+
+4. **Team Management**  
+   Pengelolaan data anggota tim sales.
+
+5. **Profile Management**  
+   Pengelolaan profil akun masing-masing pengguna.
+
+6. **Lead Activity Timeline**  
+   Riwayat aktivitas setiap leads, meliputi:
+   - Catatan
+   - Pengiriman Email
+   - Agenda Telepon
+   - Agenda Meeting
+   - Tugas
+
+7. **Sales Forecasting Dashboard**  
+   Proyeksi pendapatan berdasarkan weighted probability pada setiap tahapan pipeline.
+
+8. **Document Management**  
+   Pembuatan dokumen bisnis secara otomatis dalam format `.docx`, meliputi:
+   - Invoice
+   - SPK
+   - MoU
+
+Sistem telah melalui proses **Black Box Testing** bersama Product Owner dengan seluruh skenario dinyatakan **Valid**, serta **User Acceptance Testing (UAT)** yang melibatkan **10 responden** dari empat role pengguna di CMLABS.
+
+---
 
 ## 5. Teknologi yang Digunakan
 
 | Kategori | Teknologi |
-|---|---|
-| Framework | Next.js 16 (App Router), React 19 |
-| Bahasa | TypeScript |
-| Styling | Tailwind CSS |
-| Autentikasi | NextAuth.js v5 (beta) |
-| ORM & Database | Prisma ORM v5.22.0, PostgreSQL (Neon serverless / Docker lokal) |
-| Drag & Drop | @hello-pangea/dnd |
-| Visualisasi Data | Recharts |
-| Generate Dokumen | docx (`.docx`), jspdf + jspdf-autotable |
-| Validasi & Form | Zod, React Hook Form |
-| Data Fetching | TanStack React Query |
-| Keamanan Password | bcryptjs |
-| Pengiriman Email | Resend |
-| Testing | Jest |
-| Deployment | Vercel, Docker |
+|-----------|-----------|
+| **Framework** | Next.js 16 (App Router), React 19 |
+| **Bahasa Pemrograman** | TypeScript |
+| **Styling** | Tailwind CSS |
+| **Authentication** | NextAuth.js v5 (Beta) |
+| **ORM** | Prisma ORM v5.22 |
+| **Database** | PostgreSQL (Neon Serverless / Docker Local) |
+| **Drag & Drop** | @hello-pangea/dnd |
+| **Chart & Visualisasi** | Recharts |
+| **Document Generator** | docx, jsPDF, jsPDF-AutoTable |
+| **Validation** | Zod |
+| **Form Handling** | React Hook Form |
+| **Data Fetching** | TanStack React Query |
+| **Password Hashing** | bcryptjs |
+| **Email Service** | Resend |
+| **Testing** | Jest |
+| **Deployment** | Docker, Vercel |
 
-## 6. Cara Menjalankan Sistem
+---
 
-### 6.1 Menjalankan via Docker (disarankan)
+# 6. Cara Menjalankan Sistem
 
-**Prasyarat:** Docker Desktop (Windows/macOS) atau Docker Engine + Docker Compose plugin (Linux/Ubuntu).
+## 6.1 Menjalankan Menggunakan Docker (Direkomendasikan)
 
-**Langkah:**
+### Prasyarat
+
+- Docker Desktop (Windows/macOS)
+- atau Docker Engine + Docker Compose Plugin (Linux/Ubuntu)
+
+### Clone Repository
+
 ```bash
 git clone https://github.com/repssrahmaa/ta-sisteminformasi-221131004-crm-cmlabs.git
 cd ta-sisteminformasi-221131004-crm-cmlabs
+```
+
+### Jalankan
+
+```bash
 docker compose up --build
 ```
 
-Perintah ini menjalankan tiga tahap secara berurutan dan otomatis: (1) container `postgres` menyala dan ditunggu hingga siap, (2) container `migrate` menjalankan migrasi skema database dan mengisi data awal, (3) container `app` baru menyala setelah migrasi selesai. Tunggu hingga log menampilkan `✓ Ready`, lalu buka `http://localhost:3000`.
+Docker akan menjalankan proses berikut secara otomatis:
 
-Untuk menghentikan:
-```bash
-docker compose down          # hentikan, data database tetap ada
-docker compose down -v       # hentikan sekaligus hapus data database
+1. Menjalankan container PostgreSQL.
+2. Menunggu database siap digunakan.
+3. Menjalankan migrasi database.
+4. Menjalankan proses seed data.
+5. Menjalankan aplikasi CRM.
+
+Setelah muncul log:
+
+```text
+✓ Ready
 ```
 
-### 6.2 Menjalankan Tanpa Docker (Node.js lokal)
+buka browser:
 
-**Prasyarat:** Node.js 20 LTS+, npm, akun database PostgreSQL (mis. [Neon](https://neon.tech)).
+```text
+http://localhost:3000
+```
+
+### Menghentikan Docker
+
+```bash
+docker compose down
+```
+
+Menghapus seluruh data database:
+
+```bash
+docker compose down -v
+```
+
+---
+
+## 6.2 Menjalankan Tanpa Docker
+
+### Prasyarat
+
+- Node.js 20 LTS atau lebih baru
+- npm
+- PostgreSQL Database (misalnya Neon)
+
+### Clone Repository
 
 ```bash
 git clone https://github.com/repssrahmaa/ta-sisteminformasi-221131004-crm-cmlabs.git
 cd ta-sisteminformasi-221131004-crm-cmlabs
+```
+
+### Install Dependency
+
+```bash
 npm install
 ```
 
-Buat file `.env` di root project:
+### Buat File `.env`
+
 ```env
 DATABASE_URL="postgresql://user:password@host:port/database"
-NEXTAUTH_SECRET="isi-dengan-string-acak-yang-aman"
+
+NEXTAUTH_SECRET="isi-dengan-secret"
+
 NEXTAUTH_URL="http://localhost:3000"
-RESEND_API_KEY="re_xxxxxxxxxxxxxxxxxxxx"
+
+RESEND_API_KEY="re_xxxxxxxxxxxxxxxxx"
 ```
-(`NEXTAUTH_SECRET` bisa dibuat dengan `openssl rand -base64 32`)
+
+Generate `NEXTAUTH_SECRET`:
+
+```bash
+openssl rand -base64 32
+```
+
+### Jalankan Migrasi Database
 
 ```bash
 npx prisma migrate deploy
+```
+
+### Jalankan Seed Data
+
+```bash
 npx prisma db seed
+```
+
+### Jalankan Aplikasi
+
+```bash
 npm run dev
 ```
 
-Buka `http://localhost:3000`.
+Akses:
 
-### 6.3 Akun Demo
+```text
+http://localhost:3000
+```
+
+---
+
+## 6.3 Akun Demo
 
 | Role | Email | Password |
-|---|---|---|
-| Admin | `ADMIN@cmlabs.co` | `Demo123!` |
-| Executive | `executive@cmlabs.co` | `Demo123!` |
-| Sales Manager | `sales_mgr@cmlabs.co` | `Demo123!` |
-| Account Executive | `ae@cmlabs.co` | `Demo123!` |
+|------|-------|----------|
+| **Admin** | `ADMIN@cmlabs.co` | `Demo123!` |
+| **Executive** | `executive@cmlabs.co` | `Demo123!` |
+| **Sales Manager** | `sales_mgr@cmlabs.co` | `Demo123!` |
+| **Account Executive** | `ae@cmlabs.co` | `Demo123!` |
 
-> Salin persis seperti tertulis — email bersifat *case-sensitive*.
+> **Catatan:** Email bersifat **case-sensitive**, gunakan sesuai penulisan pada tabel.
 
-### 6.4 Menjalankan Test
+---
+
+## 6.4 Menjalankan Unit Test
+
 ```bash
 npm test
 ```
 
-## 7. Struktur Project
+---
+
+# 7. Struktur Project
 
 ```text
 ta-sisteminformasi-221131004-crm-cmlabs/
+│
 ├── app/
-│   ├── (dashboard)/          # Route group halaman utama (butuh login)
-│   │   ├── dashboard/        # Analytics Dashboard
-│   │   ├── forecasting/      # Sales Forecasting Dashboard
-│   │   ├── leads/            # Leads Management (Kanban Board)
-│   │   ├── profile/          # Profile Management
-│   │   ├── reports/          # Document Management
-│   │   └── team/             # Team Management
-│   ├── api/                  # Route handler backend
-│   ├── login/                # Halaman Login
-│   └── unauthorized/         # Halaman akses ditolak
-├── components/               # Komponen UI (Kanban board, Sidebar, form, dll.)
-├── hooks/                    # Custom React hooks (useRoleGuard, useTheme, dll.)
-├── lib/                      # Konfigurasi auth, permission matrix, service (docx generator, dll.)
+│   ├── (dashboard)/
+│   │   ├── dashboard/          # Analytics Dashboard
+│   │   ├── forecasting/        # Sales Forecasting Dashboard
+│   │   ├── leads/              # Leads Management
+│   │   ├── profile/            # Profile Management
+│   │   ├── reports/            # Document Management
+│   │   └── team/               # Team Management
+│   │
+│   ├── api/                    # Backend Route Handler
+│   ├── login/
+│   └── unauthorized/
+│
+├── components/                 # Reusable UI Components
+├── hooks/                      # Custom React Hooks
+├── lib/                        # Business Logic & Services
+│
 ├── prisma/
-│   ├── schema.prisma         # Skema database
-│   ├── migrations/           # Riwayat migrasi database
-│   └── seed.ts               # Skrip pengisian data awal
-├── types/                    # TypeScript type definitions
-├── public/                   # Aset statis
-├── proxy.ts                  # Route guard berbasis role (konvensi Next.js 16, pengganti middleware.ts)
-├── docker-compose.yml        # Orkestrasi Docker (postgres → migrate → app)
+│   ├── schema.prisma
+│   ├── migrations/
+│   └── seed.ts
+│
+├── public/
+├── types/
+│
+├── proxy.ts                    # Route Guard (Next.js 16)
+├── docker-compose.yml
 ├── Dockerfile
 └── package.json
 ```
 
-## 8. Catatan Khusus
+---
 
-**Batasan:**
-- Sistem ini merupakan hasil penelitian Tugas Akhir, dikembangkan dan diuji secara internal bersama Product Owner dan perwakilan pengguna CMLABS melalui Black Box Testing dan User Acceptance Testing.
-- Cakupan role dibatasi pada empat role: Admin, Executive, Sales Manager, dan Account Executive.
-- Fitur Document Management berfokus pada pembuatan dokumen bisnis format `.docx` (Invoice, SPK, MoU).
+# 8. Catatan Khusus
 
-**Demo:** lihat tabel Akun Demo pada bagian 6.3. Seluruh akun dan data contoh dibuat otomatis saat `docker compose up` (atau `npx prisma db seed` pada instalasi manual).
+## Batasan Penelitian
+
+- Sistem dikembangkan sebagai implementasi penelitian Tugas Akhir.
+- Pengujian dilakukan secara internal bersama Product Owner dan perwakilan pengguna CMLABS.
+- Pengujian meliputi:
+  - Black Box Testing
+  - User Acceptance Testing (UAT)
+- Sistem hanya mendukung empat role pengguna:
+  - Admin
+  - Executive
+  - Sales Manager
+  - Account Executive
+- Modul **Document Management** menghasilkan dokumen bisnis dalam format `.docx`, meliputi Invoice, SPK, dan MoU.
+
+---
+
+## Demo Data
+
+Seluruh akun demo beserta data awal akan dibuat secara otomatis ketika menjalankan:
+
+```bash
+docker compose up
+```
+
+atau
+
+```bash
+npx prisma db seed
+```
+
+---
+
+## Repository
+
+```text
+https://github.com/repssrahmaa/ta-sisteminformasi-221131004-crm-cmlabs
+```
+
+---
+
+## Lisensi
+
+Repositori ini dibuat untuk keperluan akademik sebagai Tugas Akhir Program Studi Sistem Informasi Universitas Bhinneka Nusantara. Seluruh kode sumber dapat digunakan sebagai referensi pembelajaran, namun tidak diperkenankan untuk diklaim sebagai karya sendiri tanpa izin penulis.
